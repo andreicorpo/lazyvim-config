@@ -23,7 +23,23 @@ autocmd("FileType", {
   end,
 })
 
+autocmd("BufReadPost", {
+  group = augroup("ScrollOpts"),
+  pattern = "*",
+  callback = function()
+    vim.opt.scroll = 10
+  end,
+})
+
 vim.keymap.set({ "n", "v", "o", "i", "c" }, "<Plug>(StopHL)", 'execute("nohlsearch")[-1]', { expr = true })
+
+autocmd("WinResized", {
+  desc = "Update Dashboard on window resize",
+  group = augroup("SnacksDashboard"),
+  callback = function()
+    Snacks.dashboard.update()
+  end,
+})
 
 -- local function stop_hl()
 --   print("stop_hl")

@@ -40,6 +40,8 @@ end
 return {
   "nvim-neo-tree/neo-tree.nvim",
   opts = {
+    close_if_last_window = true,
+    popup_border_style = { "▔", "▔", "▔", " ", " ", " ", " ", " " },
     commands = {
       trash = trash,
       trash_visual = trash_visual,
@@ -56,9 +58,39 @@ return {
       follow_current_file = {
         enabled = true,
       },
+      hijack_netrw_behavior = "open_current",
     },
   },
   keys = function()
-    return {}
+    return {
+      {
+        "\\",
+        -- function()
+        --   require("neo-tree.command").execute({ toggle = true, dir = LazyVim.root(), position = "right", reveal = true })
+        -- end,
+        "<Cmd>Neotree toggle reveal=true position=top<CR>",
+        desc = "neo-tree: toggle",
+      },
+      {
+        "<leader>e",
+        -- function()
+        --   require("neo-tree.command").execute({
+        --     toggle = true,
+        --     dir = LazyVim.root(),
+        --     position = "float",
+        --     reveal = true,
+        --   })
+        -- end,
+        "<Cmd>Neotree toggle reveal=true position=float<CR>",
+        desc = "neo-tree: float",
+      },
+      -- {
+      --   "<leader>fE",
+      --   function()
+      --     require("neo-tree.command").execute({ toggle = true, dir = vim.uv.cwd() })
+      --   end,
+      --   desc = "Explorer NeoTree (cwd)",
+      -- },
+    }
   end,
 }

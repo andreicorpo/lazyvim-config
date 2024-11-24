@@ -6,6 +6,11 @@ vim.opt.spell = true
 vim.opt.spelllang = "en_gb"
 vim.opt.formatoptions:remove({ "r", "o" })
 
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
+
 vim.g.maplocalleader = "," -- Local leader is <Space>
 
 vim.opt.fillchars = {
@@ -18,8 +23,8 @@ vim.opt.fillchars = {
   eob = " ", -- suppress ~ at EndOfBuffer
   diff = "⣿", -- alternatives = ⣿ ░ ─
   msgsep = " ", -- alternatives: ‾ ─
-  fold = " ",
+  fold = "y",
   foldopen = "▼", -- '▼'
   foldclose = "▶", -- '▶'
-  foldsep = " ",
+  foldsep = "x",
 }

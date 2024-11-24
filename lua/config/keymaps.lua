@@ -2,6 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 local map = vim.keymap.set
+local del = vim.keymap.del
 
 -- save
 map({ "i", "n", "x" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "save" })
@@ -170,3 +171,9 @@ end
 -- highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
+
+map("n", "<C-w>d", "<cmd>split<cr>", { desc = "split: horozontal" })
+map("n", "<C-w>s", "<cmd>vsplit<cr>", { desc = "split: vertical" })
+
+del("n", "H")
+del("n", "L")

@@ -1,10 +1,12 @@
 return {
-    {
-      "LazyVim/LazyVim",
-      opts = {
-        defaults = {
-          keymaps = false,
-        }
-      }
-    }
-  }
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      defaults = {
+        keymaps = false,
+      },
+      colorscheme = "tokyonight-night",
+    },
+  },
+}
+

@@ -151,7 +151,4 @@ return {
       }
     end,
   },
-  require("plugins.lsp.conform"),
-  require("plugins.lsp.lint"),
-  require("plugins.lsp.typescript"),
 }

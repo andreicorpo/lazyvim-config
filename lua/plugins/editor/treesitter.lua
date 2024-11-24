@@ -1,7 +1,14 @@
 return {
-
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      {
+        "axelvc/template-string.nvim",
+        config = function()
+          require("template-string").setup({})
+        end,
+      },
+    },
     opts = {
       ensure_installed = {
         "bash",
